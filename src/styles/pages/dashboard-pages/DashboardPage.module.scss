@@ -1,0 +1,7 @@
+.sidebar {
+	position: sticky;
+	top: -350px;
+	@media screen and (min-height: 1079px) {
+		top: 68px;
+	}
+}

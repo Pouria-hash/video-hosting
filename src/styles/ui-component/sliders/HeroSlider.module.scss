@@ -1,0 +1,58 @@
+.swiper {
+	width: 100%;
+	height: 100%;
+
+	.item {
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.swiperSlide {
+		text-align: center;
+		font-size: 18px;
+		background: #fff;
+
+		/* Center slide text vertically */
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		-webkit-justify-content: center;
+		justify-content: center;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		align-items: center;
+	}
+
+	.button {
+		font-size: 35px;
+		position: absolute;
+		cursor: pointer;
+		transition: transform 0.2s ease-in;
+		&.buttonPrev {
+			top: 45%;
+			right: -5px;
+			z-index: 100;
+			&:hover {
+				transform: translateX(2px);
+			}
+		}
+		&.buttonNext {
+			top: 45%;
+			left: -5px;
+			z-index: 100;
+			&:hover {
+				transform: translateX(-2px);
+			}
+		}
+	}
+}
+
+.swiper {
+	margin-left: auto;
+	margin-right: auto;
+}

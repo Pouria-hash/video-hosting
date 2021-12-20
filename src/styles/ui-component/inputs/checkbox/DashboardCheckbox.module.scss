@@ -1,0 +1,42 @@
+.formControl {
+	margin-bottom: 10px;
+	justify-content: center;
+	align-items: center;
+	input[type="checkbox"] {
+		/* Add if not using autoprefixer */
+		-webkit-appearance: none;
+		appearance: none;
+		/* For iOS < 15 to remove gradient background */
+		background-color: rgb(187, 187, 187);
+
+		/* Not removed via appearance */
+		margin: 0 5px;
+
+		display: grid;
+		place-content: center;
+		font: inherit;
+		color: currentColor;
+		width: 1.5em;
+		height: 1.5em;
+		border: none;
+		border-radius: 0.1em;
+		transform: translateY(-0.075em);
+		cursor: pointer;
+		&::before {
+			content: "";
+			width: 1.2em;
+			height: 1.2em;
+			background-color: #10abe2;
+			transform: scale(0);
+			transition: 120ms transform ease-in-out;
+			box-shadow: inset 1em 1em var(--form-control-color);
+		}
+		&:checked::before {
+			transform: scale(1);
+		}
+	}
+
+	display: flex;
+	margin-right: 5px;
+	font-size: 13px;
+}
