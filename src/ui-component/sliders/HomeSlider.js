@@ -1,4 +1,4 @@
-import { Fragment, useRef } from 'react';
+import { useRef } from 'react';
 
 import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
 
@@ -12,9 +12,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import styles from '@/styles/templates/sliders/SwiperSlider.module.scss';
+import styles from 'styles/ui-component/sliders/SwiperSlider.module.scss';
+import HomeCard from 'ui-component/cards/HomeCard';
 
-export default function SimilarItemsSlider({ items, navigation }) {
+export default function HomeSlider({ items, size }) {
 	const navigationPrevRef = useRef(null);
 	const navigationNextRef = useRef(null);
 
@@ -23,11 +24,11 @@ export default function SimilarItemsSlider({ items, navigation }) {
 			modules={[ Navigation, A11y, FreeMode ]}
 			spaceBetween={20}
 			slidesPerView={4}
+			loop={true}
 			navigation={{
 				nextEl: navigationNextRef.current,
 				prevEl: navigationPrevRef.current
 			}}
-			freeMode
 			onSlideChange={() => console.log('slide change')}
 			onSwiper={(swiper) =>
 				// Delay execution for the refs to be defined
@@ -44,7 +45,7 @@ export default function SimilarItemsSlider({ items, navigation }) {
 			breakpoints={{
 				// when window width is >= 320px
 				320: {
-					slidesPerView: 3,
+					slidesPerView: 2,
 					spaceBetween: 5
 				},
 				// when window width is >= 480px
@@ -62,15 +63,15 @@ export default function SimilarItemsSlider({ items, navigation }) {
 		>
 			{items.map((item) => (
 				<SwiperSlide key={item.id} className={styles.swiperSlide}>
-					slides{' '}
+					<HomeCard item={item} size={size} />
 				</SwiperSlide>
 			))}
 
-			<div className={`${styles.sliderButton} ${styles.buttonPrev}`} ref={navigationPrevRef}>
-				<FaAngleRight />
-			</div>
 			<div className={`${styles.sliderButton} ${styles.buttonNext}`} ref={navigationNextRef}>
 				<FaAngleLeft />
+			</div>
+			<div className={`${styles.sliderButton} ${styles.buttonPrev}`} ref={navigationPrevRef}>
+				<FaAngleRight />
 			</div>
 		</Swiper>
 	);

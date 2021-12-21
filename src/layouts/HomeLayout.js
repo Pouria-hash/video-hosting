@@ -16,7 +16,7 @@ const AuthLayout = ({ title = 'Home' }) => {
 			<Box sx={{ minHeight: '100vh', minWidth: '364px', display: 'flex', flexDirection: 'column' }}>
 				<Header />
 				<Hero />
-				<Container maxWidth="lg" sx={{ my: 'auto' }}>
+				<Container component="main" maxWidth="lg" sx={{ my: 'auto' }}>
 					<Outlet />
 				</Container>
 			</Box>

@@ -116,12 +116,12 @@ export default function HeroSlider({ items }) {
 						</Box>
 					</SwiperSlide>
 				))}
-				<Box className={`${styles.button} ${styles.buttonPrev}`} ref={navigationPrevRef}>
-					<FaAngleRight />
-				</Box>
 
 				<Box className={`${styles.button} ${styles.buttonNext}`} ref={navigationNextRef}>
 					<FaAngleLeft />
+				</Box>
+				<Box className={`${styles.button} ${styles.buttonPrev}`} ref={navigationPrevRef}>
+					<FaAngleRight />
 				</Box>
 			</Swiper>
 		</Fragment>

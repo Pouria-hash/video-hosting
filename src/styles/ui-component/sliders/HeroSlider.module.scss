@@ -10,7 +10,6 @@
 
 	.swiperSlide {
 		text-align: center;
-		font-size: 18px;
 		background: #fff;
 
 		/* Center slide text vertically */
@@ -35,7 +34,7 @@
 		transition: transform 0.2s ease-in;
 		&.buttonPrev {
 			top: 45%;
-			right: -5px;
+			right: 20px;
 			z-index: 100;
 			&:hover {
 				transform: translateX(2px);
@@ -43,7 +42,7 @@
 		}
 		&.buttonNext {
 			top: 45%;
-			left: -5px;
+			left: 20px;
 			z-index: 100;
 			&:hover {
 				transform: translateX(-2px);

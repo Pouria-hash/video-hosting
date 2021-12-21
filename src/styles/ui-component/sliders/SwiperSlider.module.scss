@@ -1,0 +1,28 @@
+.swiperContainer {
+	padding: 10px 5px;
+}
+
+.sliderButton {
+	font-size: 35px;
+	color: rgba(255, 255, 255, 0.808);
+	position: absolute;
+	display: flex;
+	cursor: pointer;
+	transition: transform 0.2s ease-in;
+	&.buttonPrev {
+		top: 45%;
+		right: -10px;
+		z-index: 100;
+		&:hover {
+			transform: translateX(1px);
+		}
+	}
+	&.buttonNext {
+		top: 45%;
+		left: -10px;
+		z-index: 100;
+		&:hover {
+			transform: translateX(-1px);
+		}
+	}
+}
